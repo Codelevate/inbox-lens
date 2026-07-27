@@ -21,7 +21,7 @@ Inbox Lens does not include telemetry, analytics, an MCP server, hooks, a browse
 
 ## Reporting a security issue
 
-Do not post secrets or a live exploit publicly. Use GitHub’s private security reporting option for this repository when available. Otherwise, open a minimal issue that contains no credentials and asks for a private contact channel.
+Do not post secrets or a live exploit publicly. Use the **Report a vulnerability** button in this repository’s [Security tab](https://github.com/Codelevate/inbox-lens/security) to send a private report. If you cannot access that option, open a minimal issue that contains no credentials and asks for a private contact channel.
 
 ## Disconnecting
 

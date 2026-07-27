@@ -14,12 +14,14 @@ It cannot send, delete, move, label, or change any email.
 
 ## Get started
 
-1. Download the latest release from this repository’s **Releases** page.
-2. Unzip it and add the folder to a new Codex or Claude Code task.
-3. Ask your agent to set up Inbox Lens and guide you through connecting Zoho Mail.
-4. Follow the short Zoho connection flow in the setup page it opens on your computer.
+1. Download the latest **Inbox Lens** ZIP from this repository’s **Releases** page.
+2. Unzip it and add the extracted folder to a new Codex or Claude Code task.
+3. Tell your agent one sentence: **“Set up Inbox Lens for Codex”** or **“Set up Inbox Lens for Claude Code.”**
+4. Your agent opens a private Zoho connection page on your computer. Follow the short steps shown there.
 
-You do not need to edit files or use a terminal yourself. Keep your Client Secret and authorization code out of chat; enter them only in the local setup page.
+You do not need to edit files or use a terminal yourself. Keep your Client Secret and authorization code out of chat; enter them only in the private setup page.
+
+You need a Zoho Mail account. If it is a work account, your Zoho administrator may need to allow API access. The computer running your agent also needs Python 3; your agent uses it, not you.
 
 ## What Inbox Lens can access
 
@@ -38,7 +40,7 @@ This permits reading your own account details, folders, and email messages. It d
 - **Connection details:** stay in private files on your computer
 - **Network requests:** go only to Zoho; the setup page runs locally on `127.0.0.1`
 
-The complete source is in this repository. The installer is intentionally small and the skill contains no plugins, MCP servers, hooks, browser extensions, telemetry, or global settings changes.
+The complete source is in this repository. The installer is intentionally small and the skill contains no plugins, MCP servers, hooks, browser extensions, telemetry, or global settings changes. It adds only the Inbox Lens folder to the selected agent’s skills folder.
 
 ## Disconnect
 

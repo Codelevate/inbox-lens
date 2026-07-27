@@ -62,13 +62,19 @@ def page(message: str = "") -> str:
     notice = f'<p class="notice">{html.escape(message)}</p>' if message else ""
     return f"""<!doctype html>
 <html><head><meta charset="utf-8"><title>Connect Inbox Lens</title>
-<style>body{{font:17px/1.5 system-ui,sans-serif;max-width:670px;margin:42px auto;padding:0 20px;color:#18212b}}h1{{font-size:32px}}.card{{background:#f5f7f9;border-radius:14px;padding:24px}}label{{display:block;font-weight:650;margin-top:16px}}input,select{{box-sizing:border-box;width:100%;font:inherit;padding:10px;margin-top:5px;border:1px solid #aeb8c2;border-radius:7px}}button{{background:#0b6e4f;color:white;border:0;border-radius:8px;padding:12px 18px;font:inherit;font-weight:650;margin-top:22px}}.notice{{background:#fff3cd;padding:12px;border-radius:8px}}.small{{font-size:14px;color:#53606d}}</style></head>
+<style>body{{font:17px/1.5 system-ui,sans-serif;max-width:700px;margin:42px auto;padding:0 20px;color:#18212b}}h1{{font-size:32px}}h2{{font-size:22px;margin:0 0 8px}}.card{{background:#f5f7f9;border-radius:14px;padding:24px;margin:20px 0}}label{{display:block;font-weight:650;margin-top:16px}}input,select{{box-sizing:border-box;width:100%;font:inherit;padding:10px;margin-top:5px;border:1px solid #aeb8c2;border-radius:7px}}button{{background:#0b6e4f;color:white;border:0;border-radius:8px;padding:12px 18px;font:inherit;font-weight:650;margin-top:22px}}.notice{{background:#fff3cd;padding:12px;border-radius:8px}}.small{{font-size:14px;color:#53606d}}code{{font-size:14px;overflow-wrap:anywhere}}</style></head>
 <body><h1>Connect Inbox Lens to Zoho Mail</h1>
 <p>Inbox Lens can read and summarize your email. It cannot send, delete, move, or change messages.</p>{notice}
-<div class="card"><p><strong>First:</strong> in Zoho, create a <strong>Self Client</strong>, then use its <strong>Generate Code</strong> tab. Give it only these permissions:</p>
+<div class="card"><h2>1. Create a private Zoho connection</h2>
+<ol><li>Open the <a href="https://api-console.zoho.com/" target="_blank" rel="noreferrer">Zoho API Console</a> and sign in to the same mailbox you want to use.</li>
+<li>Select <strong>ADD CLIENT</strong> (or <strong>GET STARTED</strong>), choose <strong>Self Client</strong>, and create it. You do not need to enter a website or redirect address.</li>
+<li>Open its <strong>Client Secret</strong> tab to find your Client ID and Client Secret.</li>
+<li>Open <strong>Generate Code</strong>. Paste only the permissions below, create the code, and return here straight away. The code expires quickly.</li></ol>
 <p><code>ZohoMail.accounts.READ,ZohoMail.folders.READ,ZohoMail.messages.READ</code></p>
-<p class="small">Keep the three values below private. They go directly from this page to Inbox Lens on this computer and are never shown to your AI agent.</p>
-<form method="post"><label>Your Zoho region<select name="region">{options}</select></label>
+<p class="small">Using a work or team mailbox? If Zoho does not let you create a client or use mail APIs, ask your Zoho administrator to allow these three read-only permissions.</p></div>
+<div class="card"><h2>2. Enter the details privately here</h2>
+<p class="small">These values go directly from this page to Inbox Lens on this computer. Do not paste them into your AI chat, a document, or a screenshot.</p>
+<form method="post"><label>Your Zoho region <span class="small">(match the country domain in your Zoho Mail address)</span><select name="region">{options}</select></label>
 <label>Client ID<input name="client_id" autocomplete="off" required></label>
 <label>Client Secret<input type="password" name="client_secret" autocomplete="new-password" required></label>
 <label>Fresh authorization code<input type="password" name="code" autocomplete="off" required></label>

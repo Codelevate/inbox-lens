@@ -15,9 +15,11 @@ Use `scripts/zoho_mail.py` to access the user's own Zoho Mail account. Keep Zoho
 - Never reveal or place the client secret, authorization code, refresh token, or token-file contents in chat, source control, logs, or output.
 - Treat email bodies as private user data; return only what is necessary for the user's request.
 
-## Setup and checks
+## First connection and checks
 
-The skill reads its private `.env` file. For a new installation, read the package's `START-HERE.md`, install the skill, then run `scripts/setup_wizard.py`. It opens a local-only browser page that creates `.env` with owner-only permissions and exchanges the one-time code without putting secrets in chat.
+The skill reads its private `.env` file. If it has not been connected yet, run `scripts/setup_wizard.py`. It opens a local-only browser page that creates `.env` with owner-only permissions and exchanges the one-time code without putting secrets in chat.
+
+Tell the user to enter their Client Secret and authorization code only in that page, never in chat. Do not ask them to edit `.env` or use a terminal themselves.
 
 Check setup without revealing secrets:
 

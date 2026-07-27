@@ -24,8 +24,8 @@ def main() -> int:
     parser.add_argument(
         "--host",
         choices=["codex", "claude"],
-        default="codex",
-        help="AI coding tool that will use Inbox Lens (default: codex)",
+        required=True,
+        help="AI coding tool that will use Inbox Lens: codex or claude",
     )
     parser.add_argument(
         "--skills-dir",
