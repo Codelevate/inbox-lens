@@ -1,0 +1,4 @@
+interface:
+  display_name: "Inbox Lens"
+  short_description: "Search and read Zoho Mail safely"
+  default_prompt: "Use $inbox-lens to find recent Zoho Mail from a sender and summarize only the relevant messages."

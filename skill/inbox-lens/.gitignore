@@ -1,0 +1,4 @@
+.env
+.zoho_tokens.json
+*.tmp
+__pycache__/
